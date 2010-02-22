@@ -6,7 +6,7 @@
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
   :key         => '_garvin_docs_session',
-  :secret      => '89920c80745dbb1a0af1de17befd18f20eaf4f18ad4240ceea76330d5a16c4186fe680f3bb957fd90548c2bad83af3f2bb3db46ffd6cc82e0bf259735363f85a'
+  :secret      => '60581372186aca530841657637283da477dc99c11e31638dd5f1d3b5d952001be9e75b86cea129ebdb5bbd787b750b3cea79f11eff30b6b67290c135762da9d9'
 }
 
 # Use the database for sessions instead of the cookie-based default,

@@ -1,0 +1,5 @@
+<html>
+<body>
+<%= @doc[0].body %>
+</body>
+</html>

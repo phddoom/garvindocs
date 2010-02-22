@@ -1,0 +1,13 @@
+class CreateGarvinDocs < ActiveRecord::Migration
+  def self.up
+    create_table :garvin_docs do |t|
+      create_column :title, :string
+      create_column :body, :text
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :garvin_docs
+  end
+end
