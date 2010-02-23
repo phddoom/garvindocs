@@ -20911,3 +20911,137 @@ ActionController::RoutingError (No route matches "/stylesheets/common/general.cs
   /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 00:46:48) [GET]
+  [4;36;1mGarvinDoc Load (1.0ms)[0m   [0;1mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 00:46:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 00:46:51) [GET]
+  [4;35;1mGarvinDoc Load (0.8ms)[0m   [0mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 00:46:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 00:46:52) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 00:48:12) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:02:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.6ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:07:22) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.3ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 89ms (View: 82, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:07:46) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:11:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.3ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 88ms (View: 82, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:13:28) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:14:13) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.3ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:15:48) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:22:51) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.3ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:25:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]

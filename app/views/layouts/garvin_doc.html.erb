@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Garvin Doc <%= controller.action_name %></title>
+  <title><%= @doc.title %></title>
   <style type="text/css">
 .imagebutton {height: 16; width: 16; border: solid 2px #69a4c4;
 background-color: #005EB8}
@@ -32,6 +32,18 @@ function runCommand(theCommand) {
 			//document.getElementById("doc").contentWindow.focus();
 		}
 }
+
+function Select(selectname)
+{
+ var cursel = document.getElementById(selectname).selectedIndex;
+ /* First one is always a label */
+ if (cursel != 0) {
+ var selected = document.getElementById(selectname).options[cursel].value;
+ document.execCommand(selectname,false, selected);
+ document.getElementById(selectname).selectedIndex = 0;
+ document.getElementById("doc").focus();
+ }
+} 
 
 function printDoc(){
 	document.getElementById("docForm").action="topdf.jsp";
@@ -228,13 +240,35 @@ onclick="runCommand('justifyfull');"/>
 </div>
 </td>
 <td>
+<select onchange="Select(this.id);" id="fontname">
+  <option value="Font">Font</option>
+  <option value="Arial">Arial</option>
+  <option value="Arial Black">Arial Black</option>
+  <option value="Courier">Courier</option>
+  <option value="Times New Roman">Times New Roman</option>
+  <option value="Verdana">Verdana</option>
+</select>
+</td>
+<td>
+<select onchange="Select(this.id);" id="fontsize" unselectable="on">
+  <option value="Size">Size</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>  
+</select>
+</td>
+<td>
 <div id="print" class="imagebutton">
 <img name="print" src="/images/printer.png" onclick="printDoc();"/>
 </div>
 </td>
 </tr>
 </table>
-<div id="doc" contenteditable="true" style="height:200px; border:1px solid
+<div id="doc" contenteditable="true" style="height:90%; border:1px solid
 black; background-color:#FAFFFF;overflow-x:hidden;overflow-y:auto;">
 <%= yield %>
 </div>
