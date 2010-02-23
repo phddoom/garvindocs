@@ -21045,3 +21045,449 @@ Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:25:38) [GET]
 Rendering template within layouts/garvin_doc
 Rendering garvin_doc/edit
 Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:31:18) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:32:20) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:34:47) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.6ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:35:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-02-23 01:35:06) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\nha ha<br>\r\n\r\n\r\n\r\n", "title"=>"Ha ha "}, "authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-02-23 06:35:06', "body" = '
+ha ha<br>
+
+
+
+' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 82ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:35:06) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:35:16) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-02-23 01:35:21) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n\r\nha ha<br>\r\n\r\n\r\n\r\n\r\n\r\n", "title"=>"Ha ha "}, "authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.3ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-02-23 06:35:21', "body" = '
+
+ha ha<br>
+
+
+
+
+
+' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 96ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:35:21) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:37:09) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-02-23 01:37:24) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n\r\n\r\nboo hoo<br>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", "title"=>"Ha ha "}, "authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.3ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-02-23 06:37:24', "body" = '
+
+
+boo hoo<br>
+
+
+
+
+
+
+
+' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 87ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:37:24) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:41:57) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 01:42:01) [GET]
+  [4;35;1mGarvinDoc Load (1.0ms)[0m   [0mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+ERROR: compiling _run_erb_app47views47garvin_doc47index46html46erb RAISED compile error
+/home/odin/garvin_docs/app/views/garvin_doc/index.html.erb:15: syntax error, unexpected ';', expecting ')'
+:delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+                ^
+Function body:           def _run_erb_app47views47garvin_doc47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<head>\n  "
+; @output_buffer.concat(( stylesheet_link_tag "common/general" ).to_s); @output_buffer.concat "\n</head>\n<table>\n  <tr>\n    <th>Title</th>\n  </tr>\n  \n"
+
+
+
+
+
+
+;  @doc.each do |doc| ; @output_buffer.concat "\n  <tr>      \n    <td>"
+
+; @output_buffer.concat(( link_to(doc.title, url_for(:controller => "garvin_doc", :action =>
+"edit", :id => doc.id)) ).to_s); @output_buffer.concat "</td>\n<td>"
+; @output_buffer.concat(( link_to('Delete', url_for(:controller => "garvin_doc", :action =>
+"delete", :id => doc.id), :confirm => 'Are you sure?', :method =>
+:delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n<br />\n"
+
+
+; @output_buffer.concat(( link_to 'New Document', '/garvin_doc/new' ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/odin/garvin_docs/app/views/garvin_doc/index.html.erb:23:in `compile!'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby1.8/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby1.8/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/ruby1.8/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/ruby1.8/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/ruby1.8/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/odin/garvin_docs/app/views/garvin_doc/index.html.erb:15: syntax error, unexpected ';', expecting ')'
+:delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+                ^) on line #15 of app/views/garvin_doc/index.html.erb:
+12: "edit", :id => doc.id)) %></td>
+13: <td><%= link_to('Delete', url_for(:controller => "garvin_doc", :action =>
+14: "delete", :id => doc.id), :confirm => 'Are you sure?', :method =>
+15: :delete %></td>
+16:   </tr>
+17: <% end %>
+18: </table>
+
+    app/views/garvin_doc/index.html.erb:23:in `compile!'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.6ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 01:44:47) [GET]
+  [4;36;1mGarvinDoc Load (2.3ms)[0m   [0;1mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 33ms (View: 25, DB: 2) | 200 OK [http://localhost/garvin_doc/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 01:44:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#delete (for 127.0.0.1 at 2010-02-23 01:44:53) [DELETE]
+  Parameters: {"authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"1"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 1) [0m
+  [4;36;1mGarvinDoc Destroy (0.3ms)[0m   [0;1mDELETE FROM "garvin_docs" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 62ms (DB: 1) | 302 Found [http://localhost/garvin_doc/delete/1]
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 01:44:53) [GET]
+  [4;35;1mGarvinDoc Load (0.8ms)[0m   [0mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 01:44:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#delete (for 127.0.0.1 at 2010-02-23 01:44:57) [DELETE]
+  Parameters: {"authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"2"}
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 2) [0m
+  [4;35;1mGarvinDoc Destroy (0.6ms)[0m   [0mDELETE FROM "garvin_docs" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 82ms (DB: 1) | 302 Found [http://localhost/garvin_doc/delete/2]
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 01:44:57) [GET]
+  [4;36;1mGarvinDoc Load (0.7ms)[0m   [0;1mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 01:44:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#delete (for 127.0.0.1 at 2010-02-23 01:44:59) [DELETE]
+  Parameters: {"authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"3"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 3) [0m
+  [4;36;1mGarvinDoc Destroy (0.3ms)[0m   [0;1mDELETE FROM "garvin_docs" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/
+Completed in 68ms (DB: 1) | 302 Found [http://localhost/garvin_doc/delete/3]
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 01:44:59) [GET]
+  [4;35;1mGarvinDoc Load (0.6ms)[0m   [0mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 01:44:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#delete (for 127.0.0.1 at 2010-02-23 01:45:02) [DELETE]
+  Parameters: {"authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"4"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 4) [0m
+  [4;35;1mGarvinDoc Destroy (0.3ms)[0m   [0mDELETE FROM "garvin_docs" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/
+Completed in 92ms (DB: 1) | 302 Found [http://localhost/garvin_doc/delete/4]
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-02-23 01:45:02) [GET]
+  [4;36;1mGarvinDoc Load (1.6ms)[0m   [0;1mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 14ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 01:45:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:45:05) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-02-23 01:45:40) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n\r\n\r\n\r\nTesting Document for testing new editor functionality.<br>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", "title"=>"Testing Document"}, "authenticity_token"=>"o2vBbA0A+atdajHXB1KEMZDPCQeTA715eUFEwTn1yFY=", "id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;35;1mGarvinDoc Update (0.4ms)[0m   [0mUPDATE "garvin_docs" SET "updated_at" = '2010-02-23 06:45:40', "title" = 'Testing Document', "body" = '
+
+
+
+Testing Document for testing new editor functionality.<br>
+
+
+
+
+
+
+
+
+
+' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 89ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-02-23 01:45:40) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/garvin_doc/edit/5]

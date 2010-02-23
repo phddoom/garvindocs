@@ -60,10 +60,7 @@ function save(){
 }
 
 function saveAndClose(){
-	body = document.getElementById("doc_body");
-	document.getElementById("newBody").value = body.innerHTML;
-	document.getElementById("docForm").action="/save";
-	document.getElementById("docForm").submit();
+	save();
 	window.close();
 }
 
@@ -157,7 +154,8 @@ function bindShortcuts()
 }
 </script>
 </head>
-<body onload="start()" style="background-color:#177D6B;">
+<body onload="start()" style="background-color:grey;">
+<p style="color: green"><%= flash[:notice] %></p>
 <% @action = :update %>
 <% if @new_doc %>
 <% @action = :create %>
@@ -259,6 +257,20 @@ onclick="runCommand('justifyfull');"/>
   <option value="5">5</option>
   <option value="6">6</option>
   <option value="7">7</option>  
+</select>
+</td>
+<td>
+<select onchange="Select(this.id);" id="formatblock">
+  <option value="&lt;p&gt;">Normal</option>
+  <option value="&lt;p&gt;">Paragraph</option>
+  <option value="&lt;h1&gt;">Heading 1 </option>
+  <option value="&lt;h2&gt;">Heading 2 </option>
+  <option value="&lt;h3&gt;">Heading 3 </option>
+  <option value="&lt;h4&gt;">Heading 4 </option>
+  <option value="&lt;h5&gt;">Heading 5 </option>
+  <option value="&lt;h6&gt;">Heading 6 </option>
+  <option value="&lt;address&gt;">Address </option>
+  <option value="&lt;pre&gt;">Formatted </option>
 </select>
 </td>
 <td>

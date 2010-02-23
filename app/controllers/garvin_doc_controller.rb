@@ -20,6 +20,12 @@ class GarvinDocController < ApplicationController
 
   def delete
     @doc = GarvinDoc.find(params[:id])
+    @doc.destroy
+
+    respond_to do |format|
+      format.html { redirect_to :action => 'index'  }
+      format.xml  { head :ok }
+    end
   end
 	
 	def create

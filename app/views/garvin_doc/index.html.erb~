@@ -8,8 +8,11 @@
   
 <% @doc.each do |doc| %>
   <tr>      
-    <td><%= link_to(url_for(:controller => "garvin_doc", :action => "edit", :id
-=> doc.id), doc.title) %></td>
+    <td><%= link_to(doc.title, url_for(:controller => "garvin_doc", :action =>
+"edit", :id => doc.id)) %></td>
+<td><%= link_to('Delete', url_for(:controller => "garvin_doc", :action =>
+"delete", :id => doc.id), :confirm => 'Are you sure?', :method =>
+:delete %></td>
   </tr>
 <% end %>
 </table>

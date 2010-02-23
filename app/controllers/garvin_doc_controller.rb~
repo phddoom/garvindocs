@@ -3,6 +3,7 @@ class GarvinDocController < ApplicationController
 	layout "garvin_doc", :except => [:index]
 	
 	def index
+		@doc = GarvinDoc.find(:all)
   end
   
   def new
@@ -19,6 +20,12 @@ class GarvinDocController < ApplicationController
 
   def delete
     @doc = GarvinDoc.find(params[:id])
+    @doc.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(tickets_url) }
+      format.xml  { head :ok }
+    end
   end
 	
 	def create
