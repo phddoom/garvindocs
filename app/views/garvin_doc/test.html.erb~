@@ -1,5 +1,5 @@
 <html>
 <body>
-<%= @doc[0].body %>
+<%= @doc.body  %>
 </body>
-</html>
+</html> 

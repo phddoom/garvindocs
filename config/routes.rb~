@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 	
-	#map.resources :garvin_doc
+	map.resources :garvin_doc
 	map.root :controller => "garvin_doc"
   # The priority is based upon order of creation: first created -> highest priority.
 
