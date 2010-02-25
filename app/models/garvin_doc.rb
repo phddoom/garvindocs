@@ -1,3 +1,4 @@
 class GarvinDoc < ActiveRecord::Base
   #attr_accessor :body, :title
+  belongs_to :garvin_folder
 end

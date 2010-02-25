@@ -1,9 +1,9 @@
 class GarvinDocController < ApplicationController
+  before_filter :login_required
+  layout "garvin_doc", :except => [:index]
   
-	layout "garvin_doc", :except => [:index]
-	
-	def index
-		@doc = GarvinDoc.find(:all)
+  def index
+    @doc = GarvinDoc.find(:all)
   end
   
   def new
@@ -23,7 +23,7 @@ class GarvinDocController < ApplicationController
     @doc.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tickets_url) }
+      format.html { redirect_to :action => 'index'  }
       format.xml  { head :ok }
     end
   end

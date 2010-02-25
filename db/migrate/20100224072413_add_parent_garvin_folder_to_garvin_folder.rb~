@@ -1,0 +1,9 @@
+class AddParentGarvinFolderToGarvinFolder < ActiveRecord::Migration
+  def self.up
+		add_column :garvin_folders, :garvin_folder_id, :int
+  end
+
+  def self.down
+		remove_column :garvin_folders, :garvin_folder_id
+  end
+end

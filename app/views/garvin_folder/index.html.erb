@@ -1,0 +1,42 @@
+<head>
+  <%= stylesheet_link_tag "common/general" %>
+</head>
+<h3>Current Folder: <%= @parent.name %></h3>
+<% if !@folder.empty? %>
+<h3>Folders</h3>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  
+<% @folder.each do |fold| %>
+  <tr>      
+    <td><%= link_to(fold.name, url_for(:controller => "garvin_folder", :action =>"show", :id => fold.id)) %></td>
+		<td><%= link_to('Delete', url_for(:controller => "garvin_folder", :action => "delete", :id => fold.id),
+				:confirm => 'Are you sure?', :method =>:delete) %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+<%= link_to 'New Folder', '/garvin_folder/new' %>
+<% if !@doc.empty? %>
+<h3>Documents</h3>
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+  
+<% @doc.each do |doc| %>
+  <tr>      
+    <td><%= link_to(doc.title, url_for(:controller => "garvin_doc", :action =>
+"edit", :id => doc.id)) %></td>
+<td><%= link_to('Delete', url_for(:controller => "garvin_doc", :action =>
+"delete", :id => doc.id), :confirm => 'Are you sure?', :method =>
+:delete) %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+<%= link_to 'New Document', '/garvin_doc/new' %>

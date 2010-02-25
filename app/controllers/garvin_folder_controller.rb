@@ -1,0 +1,36 @@
+class GarvinFolderController < ApplicationController
+  before_filter :login_required
+  
+  def index
+    @parent=current_user.root_folder
+    @folder=@parent.garvin_folder.find(:all)
+    @doc=@parent.garvin_doc.find(:all)
+  end
+	
+  def edit
+    @folder=current_user.garvin_folder.find(params[:id])
+  end
+
+  def show
+    @parent=GarvinFolder.find(params[:id])
+    @folder=@parent.garvin_folder.find(:all)
+    @doc=@parent.garvin_doc.find(:all)
+  end
+
+  def edit
+		@folder=GarvinFolder.find(:all)
+  end
+
+  def create
+		@folder=GarvinFolder.new
+  end
+
+  def new
+		@folder=GarvinFolder.new
+  end
+
+  def update
+		@folder=GarvinFolder.find(:all)
+  end
+
+end
