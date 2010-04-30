@@ -1,291 +1,291 @@
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= @doc.title %></title>
-  <style type="text/css">
-.imagebutton {height: 16; width: 16; border: solid 2px #69a4c4;
-background-color: #005EB8}
-</style>
-<script src="/javascripts/shortcut.js" type="text/javascript"></script>
-<script type="text/javascript">
-function start(){
-	if (document.all){ 
-		//IE
-		frames.doc.document.designMode = "On";
-	}else{ 
-		//Firefox and Chrome
-		bindShortcuts();
-		document.getElementById("doc").contentDocument.designMode = "on";
-		bindShortcuts();
-	}
-}
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title><%= @doc.title %></title>
+    <style type="text/css">
+      .imagebutton {height: 16; width: 16; border: solid 2px #69a4c4;
+        background-color: #005EB8}
+    </style>
+    <script src="/javascripts/shortcut.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      function start(){
+        if (document.all){ 
+          //IE
+          frames.doc.document.designMode = "On";
+        }else{ 
+          //Firefox and Chrome
+          bindShortcuts();
+          document.getElementById("doc").contentDocument.designMode = "on";
+          bindShortcuts();
+        }
+      }
 
 function runCommand(theCommand) {
-	var theEditor;
-		if (document.all) { 
-			//IE
-			frames["doc"].document.execCommand(theCommand, false);
-			document.getElementById("doc").contentWindow.focus();
-		} else { 
-			//Firefox and Chrome
-			document.execCommand(theCommand, false, null);
-			//document.getElementById("doc").contentWindow.focus();
-		}
+  var theEditor;
+  if (document.all) { 
+    //IE
+    frames["doc"].document.execCommand(theCommand, false);
+    document.getElementById("doc").contentWindow.focus();
+  } else { 
+    //Firefox and Chrome
+    document.execCommand(theCommand, false, null);
+    //document.getElementById("doc").contentWindow.focus();
+  }
 }
 
 function Select(selectname)
 {
- var cursel = document.getElementById(selectname).selectedIndex;
- /* First one is always a label */
- if (cursel != 0) {
- var selected = document.getElementById(selectname).options[cursel].value;
- document.execCommand(selectname,false, selected);
- document.getElementById(selectname).selectedIndex = 0;
- document.getElementById("doc").focus();
- }
+  var cursel = document.getElementById(selectname).selectedIndex;
+  /* First one is always a label */
+  if (cursel != 0) {
+    var selected = document.getElementById(selectname).options[cursel].value;
+    document.execCommand(selectname,false, selected);
+    document.getElementById(selectname).selectedIndex = 0;
+    document.getElementById("doc").focus();
+  }
 } 
 
 function printDoc(){
-	document.getElementById("docForm").action="topdf.jsp";
-	document.getElementById("docForm").target="_blank";
-	document.getElementById("docForm").submit();
+  document.getElementById("docForm").action="topdf.jsp";
+  document.getElementById("docForm").target="_blank";
+  document.getElementById("docForm").submit();
 
 }
 
 function save(){
-	body = document.getElementById("doc");
-	document.getElementById("doc_body").value = body.innerHTML;
-	document.getElementById("docForm").submit();
+  body = document.getElementById("doc");
+  document.getElementById("doc_body").value = body.innerHTML;
+  document.getElementById("docForm").submit();
 
 }
 
 function saveAndClose(){
-	save();
-	window.close();
+  save();
+  window.close();
 }
 
 function bindShortcuts()
 {
-	//Make Bold shortcut bind to ctrl+b
-	shortcut.add("Ctrl+b",function() {
-		document.execCommand('bold', false, null);
-	});
+  //Make Bold shortcut bind to ctrl+b
+  shortcut.add("Ctrl+b",function() {
+      document.execCommand('bold', false, null);
+      });
 
-	//Make Italic shortcut bind to ctrl+i
-	shortcut.add("Ctrl+i",function() {
-		document.execCommand('italic', false, null);
-	});
+  //Make Italic shortcut bind to ctrl+i
+  shortcut.add("Ctrl+i",function() {
+      document.execCommand('italic', false, null);
+      });
 
-	//Make Underline shortcut bind to ctrl+u
-	shortcut.add("Ctrl+u",function() {
-		document.execCommand('underline', false, null);
-	});
+  //Make Underline shortcut bind to ctrl+u
+  shortcut.add("Ctrl+u",function() {
+      document.execCommand('underline', false, null);
+      });
 
-	//Make indent shortcut bind to Tab
-	shortcut.add("Tab",function() {
-		document.execCommand('indent', false, null);
-	});
+  //Make indent shortcut bind to Tab
+  shortcut.add("Tab",function() {
+      document.execCommand('indent', false, null);
+      });
 
-	//Make unindent shortcut bind to Shift+Tab
-	shortcut.add("Shift+Tab",function() {
-		document.execCommand('outdent', false, null);
-	});
+  //Make unindent shortcut bind to Shift+Tab
+  shortcut.add("Shift+Tab",function() {
+      document.execCommand('outdent', false, null);
+      });
 
-	//Make list shortcut bind to Ctrl+l
-	shortcut.add("Ctrl+l",function() {
-		document.execCommand('InsertOrderedList', false, null);
-	});
+  //Make list shortcut bind to Ctrl+l
+  shortcut.add("Ctrl+l",function() {
+      document.execCommand('InsertOrderedList', false, null);
+      });
 
-	//Make bullets shortcut bind to Ctrl+Shift+l
-	shortcut.add("Ctrl+Shift+l",function() {
-		document.execCommand('InsertUnorderedList', false, null);
-	});
+  //Make bullets shortcut bind to Ctrl+Shift+l
+  shortcut.add("Ctrl+Shift+l",function() {
+      document.execCommand('InsertUnorderedList', false, null);
+      });
 
-	//Make strikethrough shortcut bind to Ctrl+k
-	shortcut.add("Ctrl+k",function() {
-		document.execCommand('strikethrough', false, null);
-	});
+  //Make strikethrough shortcut bind to Ctrl+k
+  shortcut.add("Ctrl+k",function() {
+      document.execCommand('strikethrough', false, null);
+      });
 
-	//Make superscript shortcut bind to Ctrl+=
-	shortcut.add("Ctrl+=",function() {
-		document.execCommand('superscript', false, null);
-	});
+  //Make superscript shortcut bind to Ctrl+=
+  shortcut.add("Ctrl+=",function() {
+      document.execCommand('superscript', false, null);
+      });
 
-	//Make superscript shortcut bind to Ctrl+-
-	shortcut.add("Ctrl+-",function() {
-		document.execCommand('subscript', false, null);
-	});
+  //Make superscript shortcut bind to Ctrl+-
+  shortcut.add("Ctrl+-",function() {
+      document.execCommand('subscript', false, null);
+      });
 
-	//Make justifyleft shortcut bind to Ctrl+e
-	shortcut.add("Ctrl+e",function() {
-		document.execCommand('justifyleft', false, null);
-	});
+  //Make justifyleft shortcut bind to Ctrl+e
+  shortcut.add("Ctrl+e",function() {
+      document.execCommand('justifyleft', false, null);
+      });
 
-	//Make justifyright shortcut bind to Ctrl+r
-	shortcut.add("Ctrl+r",function() {
-		document.execCommand('justifyright', false, null);
-	});
+  //Make justifyright shortcut bind to Ctrl+r
+  shortcut.add("Ctrl+r",function() {
+      document.execCommand('justifyright', false, null);
+      });
 
-	//Make justifycenter shortcut bind to Ctrl+e
-	shortcut.add("Ctrl+Shift+e",function() {
-		document.execCommand('justifycenter', false, null);
-	});
+  //Make justifycenter shortcut bind to Ctrl+e
+  shortcut.add("Ctrl+Shift+e",function() {
+      document.execCommand('justifycenter', false, null);
+      });
 
-	//Make justifyfull shortcut bind to Ctrl+j
-	shortcut.add("Ctrl+j",function() {
-		document.execCommand('justifyfull', false, null);
-	});
+  //Make justifyfull shortcut bind to Ctrl+j
+  shortcut.add("Ctrl+j",function() {
+      document.execCommand('justifyfull', false, null);
+      });
 
-	//Make Print shortcut bind to Ctrl+p
-	shortcut.add("Ctrl+p",function() {
-		parent.printDoc();
-	});
+  //Make Print shortcut bind to Ctrl+p
+  shortcut.add("Ctrl+p",function() {
+      parent.printDoc();
+      });
 
-	//Make Save shortcut bind to Ctrl+S
-	shortcut.add("Ctrl+s",function() {
-		parent.save();
-		
-	});
+  //Make Save shortcut bind to Ctrl+S
+  shortcut.add("Ctrl+s",function() {
+      parent.save();
 
-	//Make Save and Close shortcut bind to Ctrl+S
-	shortcut.add("Ctrl+Shift+s",function() {
-		parent.saveAndClose();
-	});
+      });
+
+  //Make Save and Close shortcut bind to Ctrl+S
+  shortcut.add("Ctrl+Shift+s",function() {
+      parent.saveAndClose();
+      });
 }
 </script>
 </head>
 <body onload="start()" style="background-color:grey;">
-<p style="color: green"><%= flash[:notice] %></p>
-<% @action = :update %>
-<% if @new_doc %>
-<% @action = :create %>
-<% end %>
-<% form_for :doc, :url => {:action => @action, :id => @doc}, :html => {:id =>
-'docForm'} do |f| %>
-<%= f.text_field :title %>
-<table>
-<tr>
-<td>
-<div id="bold" class="imagebutton">
-<img name="bold" src="/images/text_bold.png"
-onclick="runCommand('bold');"/>
-</div>
-</td>
-<td>
-<div id="italic" class="imagebutton">
-<img name="italic" src="/images/text_italic.png"
-onclick="runCommand('italic');"/>
-</div>
-</td>
-<td>
-<div id="underline" class="imagebutton">
-<img name="underline" src="/images/text_underline.png"
-onclick="runCommand('underline');"/>
-</div>
-</td>
-<td>
-<div id="list" class="imagebutton">
-<img name="list" src="/images/text_list_numbers.png"
-onclick="runCommand('InsertOrderedList');"/>
-</div>
-</td>
-<td>
-<div id="bullets" class="imagebutton">
-<img name="bullets" src="/images/text_list_bullets.png"
-onclick="runCommand('InsertUnorderedList');"/>
-</div>
-</td>
-<td>
-<div id="strikethrough" class="imagebutton">
-<img name="strikethrough" src="/images/text_strikethrough.png"
-onclick="runCommand('strikethrough');"/>
-</div>
-</td>
-<td>
-<div id="superscript" class="imagebutton">
-<img name="superscript" src="/images/text_superscript.png"
-onclick="runCommand('superscript');"/>
-</div>
-</td>
-<td>
-<div id="subscript" class="imagebutton">
-<img name="subscript" src="/images/text_subscript.png"
-onclick="runCommand('subscript');"/>
-</div>
-</td>
-<td>
-<div id="justifyright" class="imagebutton">
-<img name="justifyright" src="/images/text_justifyright.png"
-onclick="runCommand('justifyright');"/>
-</div>
-</td>
-<td>
-<div id="justifycenter" class="imagebutton">
-<img name="justifycenter" src="/images/text_justifycenter.png"
-onclick="runCommand('justifycenter');"/>
-</div>
-</td>
-<td>
-<div id="justifyleft" class="imagebutton">
-<img name="justifyleft" src="/images/text_justifyleft.png"
-onclick="runCommand('justifyleft');"/>
-</div>
-</td>
-<td>
-<div id="justifyfull" class="imagebutton">
-<img name="justifyfull" src="/images/text_justifyfull.png"  
-onclick="runCommand('justifyfull');"/>
-</div>
-</td>
-<td>
-<select onchange="Select(this.id);" id="fontname">
-  <option value="Font">Font</option>
-  <option value="Arial">Arial</option>
-  <option value="Arial Black">Arial Black</option>
-  <option value="Courier">Courier</option>
-  <option value="Times New Roman">Times New Roman</option>
-  <option value="Verdana">Verdana</option>
-</select>
-</td>
-<td>
-<select onchange="Select(this.id);" id="fontsize" unselectable="on">
-  <option value="Size">Size</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>  
-</select>
-</td>
-<td>
-<select onchange="Select(this.id);" id="formatblock">
-  <option value="&lt;p&gt;">Normal</option>
-  <option value="&lt;p&gt;">Paragraph</option>
-  <option value="&lt;h1&gt;">Heading 1 </option>
-  <option value="&lt;h2&gt;">Heading 2 </option>
-  <option value="&lt;h3&gt;">Heading 3 </option>
-  <option value="&lt;h4&gt;">Heading 4 </option>
-  <option value="&lt;h5&gt;">Heading 5 </option>
-  <option value="&lt;h6&gt;">Heading 6 </option>
-  <option value="&lt;address&gt;">Address </option>
-  <option value="&lt;pre&gt;">Formatted </option>
-</select>
-</td>
-<td>
-<div id="print" class="imagebutton">
-<img name="print" src="/images/printer.png" onclick="printDoc();"/>
-</div>
-</td>
-</tr>
-</table>
-<div id="doc" contenteditable="true" style="height:90%; border:1px solid
-black; background-color:#FAFFFF;overflow-x:hidden;overflow-y:auto;">
-<%= yield %>
-</div>
-<%= hidden_field(:doc, :body) %>
-<input type="button" value="Save" onclick="save()" />
-<% end %>
-</body>
+  <p style="color: green"><%= flash[:notice] %></p>
+  <% @action = :update %>
+  <% if @new_doc %>
+    <% @action = :create %>
+  <% end %>
+  <% form_for :doc, :url => {:action => @action, :id => @doc}, :html => {:id =>
+    'docForm'} do |f| %>
+      <%= f.text_field :title %>
+      <table>
+        <tr>
+          <td>
+            <div id="bold" class="imagebutton">
+              <img name="bold" src="/images/text_bold.png"
+              onclick="runCommand('bold');"/>
+            </div>
+          </td>
+          <td>
+            <div id="italic" class="imagebutton">
+              <img name="italic" src="/images/text_italic.png"
+              onclick="runCommand('italic');"/>
+            </div>
+          </td>
+          <td>
+            <div id="underline" class="imagebutton">
+              <img name="underline" src="/images/text_underline.png"
+              onclick="runCommand('underline');"/>
+            </div>
+          </td>
+          <td>
+            <div id="list" class="imagebutton">
+              <img name="list" src="/images/text_list_numbers.png"
+              onclick="runCommand('InsertOrderedList');"/>
+            </div>
+          </td>
+          <td>
+            <div id="bullets" class="imagebutton">
+              <img name="bullets" src="/images/text_list_bullets.png"
+              onclick="runCommand('InsertUnorderedList');"/>
+            </div>
+          </td>
+          <td>
+            <div id="strikethrough" class="imagebutton">
+              <img name="strikethrough" src="/images/text_strikethrough.png"
+              onclick="runCommand('strikethrough');"/>
+            </div>
+          </td>
+          <td>
+            <div id="superscript" class="imagebutton">
+              <img name="superscript" src="/images/text_superscript.png"
+              onclick="runCommand('superscript');"/>
+            </div>
+          </td>
+          <td>
+            <div id="subscript" class="imagebutton">
+              <img name="subscript" src="/images/text_subscript.png"
+              onclick="runCommand('subscript');"/>
+            </div>
+          </td>
+          <td>
+            <div id="justifyright" class="imagebutton">
+              <img name="justifyright" src="/images/text_justifyright.png"
+              onclick="runCommand('justifyright');"/>
+            </div>
+          </td>
+          <td>
+            <div id="justifycenter" class="imagebutton">
+              <img name="justifycenter" src="/images/text_justifycenter.png"
+              onclick="runCommand('justifycenter');"/>
+            </div>
+          </td>
+          <td>
+            <div id="justifyleft" class="imagebutton">
+              <img name="justifyleft" src="/images/text_justifyleft.png"
+              onclick="runCommand('justifyleft');"/>
+            </div>
+          </td>
+          <td>
+            <div id="justifyfull" class="imagebutton">
+              <img name="justifyfull" src="/images/text_justifyfull.png"  
+              onclick="runCommand('justifyfull');"/>
+            </div>
+          </td>
+          <td>
+            <select onchange="Select(this.id);" id="fontname">
+              <option value="Font">Font</option>
+              <option value="Arial">Arial</option>
+              <option value="Arial Black">Arial Black</option>
+              <option value="Courier">Courier</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Verdana">Verdana</option>
+            </select>
+          </td>
+          <td>
+            <select onchange="Select(this.id);" id="fontsize" unselectable="on">
+              <option value="Size">Size</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>  
+            </select>
+          </td>
+          <td>
+            <select onchange="Select(this.id);" id="formatblock">
+              <option value="&lt;p&gt;">Normal</option>
+              <option value="&lt;p&gt;">Paragraph</option>
+              <option value="&lt;h1&gt;">Heading 1 </option>
+              <option value="&lt;h2&gt;">Heading 2 </option>
+              <option value="&lt;h3&gt;">Heading 3 </option>
+              <option value="&lt;h4&gt;">Heading 4 </option>
+              <option value="&lt;h5&gt;">Heading 5 </option>
+              <option value="&lt;h6&gt;">Heading 6 </option>
+              <option value="&lt;address&gt;">Address </option>
+              <option value="&lt;pre&gt;">Formatted </option>
+            </select>
+          </td>
+          <td>
+            <div id="print" class="imagebutton">
+              <img name="print" src="/images/printer.png" onclick="printDoc();"/>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div id="doc" contenteditable="true" style="height:90%; border:1px solid
+        black; background-color:#FAFFFF;overflow-x:hidden;overflow-y:auto;">
+        <%= yield %>
+      </div>
+      <%= hidden_field(:doc, :body) %>
+      <input type="button" value="Save" onclick="save()" />
+    <% end %>
+  </body>
 </html>

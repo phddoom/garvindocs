@@ -7,6 +7,7 @@ class GarvinDocController < ApplicationController
   end
   
   def new
+    @parent = GarvinFolder.find(params[:id])
     @doc = GarvinDoc.new
   end
 
@@ -29,7 +30,9 @@ class GarvinDocController < ApplicationController
   end
 
   def create
+    @parent = GarvinFolder.find(params[:parent][:id])
     @doc = GarvinDoc.new(params[:doc])
+    @doc.garvin_folder = @parent
     @doc.save
     respond_to do |format|
       flash[:notice] = 'Document was successfully created.'

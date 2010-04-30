@@ -38,4 +38,4 @@
 </table>
 <% end %>
 <br />
-<%= link_to 'New Document', '/garvin_doc/new' %>
+<%= link_to 'New Document', url_for(:controller => "garvin_doc", :action =>"new", :id => @parent.id) %>
