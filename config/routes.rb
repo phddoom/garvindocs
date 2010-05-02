@@ -1,12 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :session
+  map.resources :garvin_folders
+  map.resources :garvin_docs
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
 
   #map.resources :garvin_doc
-  map.root :controller => "garvin_folder"
+  map.root :controller => "garvin_folders"
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

@@ -1,4 +1,4 @@
-class GarvinFolderController < ApplicationController
+class GarvinFoldersController < ApplicationController
   before_filter :login_required
   
   def index
@@ -22,11 +22,15 @@ class GarvinFolderController < ApplicationController
   end
 
   def create
-		@folder=GarvinFolder.new
+		@folder = GarvinFolder.new(params[:garvin_folder])
+    @folder.parent_garvin_folder = GarvinFolder.find(params[:parent][:id])
+    @folder.save!
   end
 
   def new
+    @parents = GarvinFolder.find(:all)
 		@folder=GarvinFolder.new
+    render(:layout => false)
   end
 
   def update

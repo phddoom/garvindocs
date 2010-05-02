@@ -18,12 +18,14 @@
                     {image_tag("/images/folder.png", :border => "0"), 
                       content_tag("span"," ", :type => "expand") +
                       content_tag("span", fold.name)},
-                      url_for(:controller => "garvin_folder", :action =>"show", :id => fold.id), :class => "folder_link") %></td>
-		<td><%= link_to('Delete', url_for(:controller => "garvin_folder", :action => "delete", :id => fold.id),
+                      url_for(:controller => "garvin_folders", :action =>"show", :id => fold.id), :class => "folder_link") %></td>
+		<td><%= link_to('Delete', url_for(:controller => "garvin_folders", :action => "delete", :id => fold.id),
 				:confirm => 'Are you sure?', :method =>:delete) %></td>
   </tr>
 <% end %>
 </table>
+</br>
+<%= link_to "New Folder", new_garvin_folder_path %>
 <br />
 <% end %>
 <% if !@doc.empty? %>

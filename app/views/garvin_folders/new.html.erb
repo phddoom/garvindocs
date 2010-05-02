@@ -1,0 +1,7 @@
+<% form_for(@folder) do |f| %>
+  <%= f.label"Name of Folder" %></br>
+  <%= f.text_field :name %></br>
+  <%= select(:parent, :id, @parents.map{|u| [u.name, u.id]}, :prompt => "Select a Parent Folder")%>
+  </br>
+  <%= f.submit "Create Folder"%>
+<% end %>
