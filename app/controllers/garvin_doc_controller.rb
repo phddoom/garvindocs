@@ -1,6 +1,6 @@
 class GarvinDocController < ApplicationController
   before_filter :login_required
-  layout "garvin_doc", :except => [:index]
+  layout "garvin_doc", :except => [:index, :print_error]
   
   def index
     @doc = GarvinDoc.find(:all)
@@ -69,10 +69,11 @@ class GarvinDocController < ApplicationController
       format.html {redirect_to :action => 'print_error'}
       format.xml  { head :ok }
       end
+		else
+			send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
+			#perhaps add functionality to delete tmp files created
+			#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
 		end
-		send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
-		#perhaps add functionality to delete tmp files created
-		#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
   end
   
   def print_error
