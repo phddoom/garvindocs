@@ -55,7 +55,7 @@ class GarvinDocController < ApplicationController
   
   def print
   	@doc = GarvinDoc.find(params[:id])
-  	html = File.open("html/#{@doc.title}.html", "w")
+  	html = File.open("html/#{@doc.title.gsub(" ", "_-_")}.html", "w")
   	if html
    		html.syswrite(@doc.body)
 		else
@@ -64,13 +64,13 @@ class GarvinDocController < ApplicationController
       format.xml  { head :ok }
       end
 		end
-		if not system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+		if not system "htmldoc --jpeg --webpage -f pdf/#{@doc.title.gsub(" ", "_-_")}.pdf html/#{@doc.title.gsub(" ", "_-_")}.html"
 			respond_to do |format|
       format.html {redirect_to :action => 'print_error'}
       format.xml  { head :ok }
       end
 		else
-			send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
+			send_file "pdf/#{@doc.title.gsub(" ", "_-_")}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
 			#perhaps add functionality to delete tmp files created
 			#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
 		end
