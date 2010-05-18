@@ -59,7 +59,9 @@ class GarvinDocController < ApplicationController
   	if html
    		html.syswrite(@doc.body)
 		else
-   		redirect_to :action => :print_error
+   		respond_to do |format|
+      format.html {redirect_to :action => 'print_error'}
+      format.xml  { head :ok }
 		end
 		if not system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
 			redirect_to :action => :print_error
