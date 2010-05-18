@@ -61,7 +61,9 @@ class GarvinDocController < ApplicationController
 		else
    		redirect_to :action => :print_error
 		end
-		system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+		if not system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+			redirect_to :action => :print_error
+		end
 		send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
 		#perhaps add functionality to delete tmp files created
 		#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
