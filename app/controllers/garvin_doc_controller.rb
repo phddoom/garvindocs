@@ -52,5 +52,19 @@ class GarvinDocController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def print
+  	@doc = GarvinDoc.find(params[:id])
+  	html = File.open("html/#{@doc.title}.html", "w")
+  	if html
+   		html.syswrite(@doc.body)
+		else
+   		puts "Unable to open file!"
+		end
+		system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+		send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
+		#perhaps add functionality to delete tmp files created
+		#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+  end
 
 end

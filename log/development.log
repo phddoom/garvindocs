@@ -37448,3 +37448,2141 @@ ActionController::UnknownAction (No action responded to delete. Actions: access_
   /opt/ruby1.8/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing GarvinFoldersController#index (for 127.0.0.1 at 2010-05-17 19:01:31) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-17 19:01:31) [GET]
+Rendering sessions/new
+Completed in 28ms (View: 25, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-17 19:01:36) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "login"=>"Odin", "password"=>"Char87ley"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'Odin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing GarvinFoldersController#index (for 127.0.0.1 at 2010-05-17 19:01:36) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders".parent_garvin_folder = 2) [0m
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs".garvin_folder_id = 2) [0m
+Rendering garvin_folders/index
+Completed in 141ms (View: 33, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 19:01:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 19:01:43) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 87ms (View: 66, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 19:04:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;36;1mGarvinFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 60ms (View: 39, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 19:04:44) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;35;1mGarvinDoc Update (0.7ms)[0m   [0mUPDATE "garvin_docs" SET "updated_at" = '2010-05-17 23:04:44', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Arial;"><font size="4">Editor Functionality</font></li><ol><li style="text-decoration: line-through;"><span style="font-family: Verdana; font-weight: bold;">Make editor pane correct for size for flash notifications.</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add back and close buttons/links</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Table functionality</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Bookmarks/Link functionality<br></span></li></ol><li style="font-family: Arial Black;">File Manager&nbsp;Functionality</li><ol><li style="font-family: Arial Black;"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Make editors open in new window?</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Rename Folder functionality</span></li></ol><li style="font-family: Courier;">Server&nbsp;Functionality</li><ol><li style="font-family: Courier; text-decoration: underline;">Print/to PDF support</li><li style="font-family: Courier;">Revisions in DB</li><li style="font-family: Courier;">Import functionality<br></li></ol><li style="font-family: Verdana;">Bugs</li><ol><li style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 116ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 19:04:44) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+ActionView::MissingTemplate (Missing template garvin_doc/print.erb in view path app/views):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 19:04:44) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;36;1mGarvinFolder Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 51ms (View: 28, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 19:10:00) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;35;1mGarvinDoc Update (0.5ms)[0m   [0mUPDATE "garvin_docs" SET "updated_at" = '2010-05-17 23:10:00', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Arial;"><font size="4">Editor Functionality</font></li><ol><li style="text-decoration: line-through;"><span style="font-family: Verdana; font-weight: bold;">Make editor pane correct for size for flash notifications.</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add back and close buttons/links</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Table functionality</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Bookmarks/Link functionality<br></span></li></ol><li style="font-family: Arial Black;">File Manager&nbsp;Functionality</li><ol><li style="font-family: Arial Black;"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Make editors open in new window?</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Rename Folder functionality</span></li></ol><li style="font-family: Courier;">Server&nbsp;Functionality</li><ol><li style="font-family: Courier; text-decoration: underline;">Print/to PDF support</li><li style="font-family: Courier;">Revisions in DB</li><li style="font-family: Courier;">Import functionality<br></li></ol><li style="font-family: Verdana;">Bugs</li><ol><li style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 107ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 19:10:00) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+Errno::ENOENT (No such file or directory - ~/html/ToDo.html):
+  app/controllers/garvin_doc_controller.rb:58:in `initialize'
+  app/controllers/garvin_doc_controller.rb:58:in `open'
+  app/controllers/garvin_doc_controller.rb:58:in `print'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 19:10:00) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;36;1mGarvinFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 50ms (View: 28, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 19:10:35) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.6ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+Errno::ENOENT (No such file or directory - //html/ToDo.html):
+  app/controllers/garvin_doc_controller.rb:58:in `initialize'
+  app/controllers/garvin_doc_controller.rb:58:in `open'
+  app/controllers/garvin_doc_controller.rb:58:in `print'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (103.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 19:10:46) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+Errno::ENOENT (No such file or directory - /html/ToDo.html):
+  app/controllers/garvin_doc_controller.rb:58:in `initialize'
+  app/controllers/garvin_doc_controller.rb:58:in `open'
+  app/controllers/garvin_doc_controller.rb:58:in `print'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 19:10:58) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+ActionView::MissingTemplate (Missing template garvin_doc/print.erb in view path app/views):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:12:43) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.7ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.7ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:12:43', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Arial;"><font size="4">Editor Functionality</font></li><ol><li style="text-decoration: line-through;"><span style="font-family: Verdana; font-weight: bold;">Make editor pane correct for size for flash notifications.</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add back and close buttons/links</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Table functionality</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Bookmarks/Link functionality<br></span></li></ol><li style="font-family: Arial Black;">File Manager&nbsp;Functionality</li><ol><li style="font-family: Arial Black;"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Make editors open in new window?</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Rename Folder functionality</span></li></ol><li style="font-family: Courier;">Server&nbsp;Functionality</li><ol><li style="font-family: Courier; text-decoration: underline;">Print/to PDF support</li><li style="font-family: Courier;">Revisions in DB</li><li style="font-family: Courier;">Import functionality<br></li></ol><li style="font-family: Verdana;">Bugs</li><ol><li style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 145ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:12:43) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+ActionController::MissingFile (Cannot read file pdf/#{@doc.title}.pdf):
+  app/controllers/garvin_doc_controller.rb:65:in `print'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (99.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:12:43) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.5ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 127ms (View: 101, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:13:07) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.7ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+
+ActionController::MissingFile (Cannot read file pdf/#{@doc.title}.pdf):
+  app/controllers/garvin_doc_controller.rb:65:in `print'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:14:36) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.8ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Sending X-Sendfile header pdf/ToDo.pdf
+Completed in 102ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:15:02) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.6ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.5ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:15:02', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Arial;"><font size="4">Editor Functionality</font></li><ol><li style="text-decoration: line-through;"><span style="font-family: Verdana; font-weight: bold;">Make editor pane correct for size for flash notifications.</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add back and close buttons/links</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Table functionality</span></li><li><span style="font-family: Verdana; font-weight: bold;">Add Bookmarks/Link functionality<br></span></li></ol><li style="font-family: Arial Black;">File Manager&nbsp;Functionality</li><ol><li style="font-family: Arial Black;"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Make editors open in new window?</span></li><li style="font-family: Arial Black;"><span style="font-style: italic;">Rename Folder functionality</span></li></ol><li style="font-family: Courier;">Server&nbsp;Functionality</li><ol><li style="font-family: Courier; text-decoration: underline;">Print/to PDF support</li><li style="font-family: Courier;">Revisions in DB</li><li style="font-family: Courier;">Import functionality<br></li></ol><li style="font-family: Verdana;">Bugs</li><ol><li style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 144ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:15:02) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Arial;\"><font size=\"4\">Editor Functionality</font></li><ol><li style=\"text-decoration: line-through;\"><span style=\"font-family: Verdana; font-weight: bold;\">Make editor pane correct for size for flash notifications.</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add back and close buttons/links</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Table functionality</span></li><li><span style=\"font-family: Verdana; font-weight: bold;\">Add Bookmarks/Link functionality<br></span></li></ol><li style=\"font-family: Arial Black;\">File Manager&nbsp;Functionality</li><ol><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Make editors open in new window?</span></li><li style=\"font-family: Arial Black;\"><span style=\"font-style: italic;\">Rename Folder functionality</span></li></ol><li style=\"font-family: Courier;\">Server&nbsp;Functionality</li><ol><li style=\"font-family: Courier; text-decoration: underline;\">Print/to PDF support</li><li style=\"font-family: Courier;\">Revisions in DB</li><li style=\"font-family: Courier;\">Import functionality<br></li></ol><li style=\"font-family: Verdana;\">Bugs</li><ol><li style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug<br></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 149ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:15:02) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.7ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 54ms (View: 30, DB: 2) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:16:21) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Editor Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><p><font size=\"3\">Make editor pane correct for size for flash notifications.</font></p></li><li><p><font size=\"3\">Add back and close buttons/links</font></p></li><li><p><font size=\"3\">Add Table functionality</font></p></li><li><p><font size=\"3\">Add Bookmarks/Link functionality<br></font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">File Manager&nbsp;Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li><p><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></p></li><li><p><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></p></li><li><p><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Server&nbsp;Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><p><font size=\"3\">Print/to PDF support</font></p></li><li><p><font size=\"3\">Revisions in DB</font></p></li><li><p><font size=\"3\">Import functionality</font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Bugs</font></p></li><ol><li style=\"font-family: Verdana;\"><p><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></p></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:16:21', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><p><font size="3">Editor Functionality</font></p></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><p><font size="3">Make editor pane correct for size for flash notifications.</font></p></li><li><p><font size="3">Add back and close buttons/links</font></p></li><li><p><font size="3">Add Table functionality</font></p></li><li><p><font size="3">Add Bookmarks/Link functionality<br></font></p></li></ol><li style="font-family: Verdana;"><p><font size="3">File Manager&nbsp;Functionality</font></p></li><ol style="font-family: Verdana;"><li><p><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></p></li><li><p><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></p></li><li><p><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></p></li></ol><li style="font-family: Verdana;"><p><font size="3">Server&nbsp;Functionality</font></p></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><p><font size="3">Print/to PDF support</font></p></li><li><p><font size="3">Revisions in DB</font></p></li><li><p><font size="3">Import functionality</font></p></li></ol><li style="font-family: Verdana;"><p><font size="3">Bugs</font></p></li><ol><li style="font-family: Verdana;"><p><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></p></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 136ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:16:21) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.3ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 52ms (View: 31, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:16:24) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Editor Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><p><font size=\"3\">Make editor pane correct for size for flash notifications.</font></p></li><li><p><font size=\"3\">Add back and close buttons/links</font></p></li><li><p><font size=\"3\">Add Table functionality</font></p></li><li><p><font size=\"3\">Add Bookmarks/Link functionality<br></font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">File Manager&nbsp;Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li><p><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></p></li><li><p><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></p></li><li><p><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Server&nbsp;Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><p><font size=\"3\">Print/to PDF support</font></p></li><li><p><font size=\"3\">Revisions in DB</font></p></li><li><p><font size=\"3\">Import functionality</font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Bugs</font></p></li><ol><li style=\"font-family: Verdana;\"><p><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></p></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.6ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:16:24', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><p><font size="3">Editor Functionality</font></p></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><p><font size="3">Make editor pane correct for size for flash notifications.</font></p></li><li><p><font size="3">Add back and close buttons/links</font></p></li><li><p><font size="3">Add Table functionality</font></p></li><li><p><font size="3">Add Bookmarks/Link functionality<br></font></p></li></ol><li style="font-family: Verdana;"><p><font size="3">File Manager&nbsp;Functionality</font></p></li><ol style="font-family: Verdana;"><li><p><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></p></li><li><p><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></p></li><li><p><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></p></li></ol><li style="font-family: Verdana;"><p><font size="3">Server&nbsp;Functionality</font></p></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><p><font size="3">Print/to PDF support</font></p></li><li><p><font size="3">Revisions in DB</font></p></li><li><p><font size="3">Import functionality</font></p></li></ol><li style="font-family: Verdana;"><p><font size="3">Bugs</font></p></li><ol><li style="font-family: Verdana;"><p><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></p></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:16:24) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Editor Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><p><font size=\"3\">Make editor pane correct for size for flash notifications.</font></p></li><li><p><font size=\"3\">Add back and close buttons/links</font></p></li><li><p><font size=\"3\">Add Table functionality</font></p></li><li><p><font size=\"3\">Add Bookmarks/Link functionality<br></font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">File Manager&nbsp;Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li><p><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></p></li><li><p><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></p></li><li><p><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Server&nbsp;Functionality</font></p></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><p><font size=\"3\">Print/to PDF support</font></p></li><li><p><font size=\"3\">Revisions in DB</font></p></li><li><p><font size=\"3\">Import functionality</font></p></li></ol><li style=\"font-family: Verdana;\"><p><font size=\"3\">Bugs</font></p></li><ol><li style=\"font-family: Verdana;\"><p><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></p></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 151ms (View: 2, DB: 2) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:16:24) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.7ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 57ms (View: 33, DB: 2) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:22:42) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:22:42', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 118ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:22:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.3ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 118ms (View: 37, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:22:45) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.5ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:22:45', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 88ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:22:45) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 451ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:22:45) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 131ms (View: 110, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:23:14) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.5ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:23:14', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 109ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:23:14) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 149ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:23:14) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.3ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 56ms (View: 32, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:23:49) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.7ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.5ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:23:49', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 138ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:23:50) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 148ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:23:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 58ms (View: 34, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:24:33) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;36;1mGarvinFolder Load (0.3ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 53ms (View: 32, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:24:34) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.6ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;35;1mGarvinDoc Update (0.5ms)[0m   [0mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:24:34', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 72ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:24:34) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Sending X-Sendfile header pdf/ToDo.pdf
+Completed in 153ms (View: 2, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:24:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;36;1mGarvinFolder Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 61ms (View: 36, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:26:10) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.6ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;35;1mGarvinDoc Update (0.6ms)[0m   [0mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:26:10', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 103ms (DB: 2) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:26:11) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.5ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 211ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:26:11) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.5ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;36;1mGarvinFolder Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 58ms (View: 33, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:26:17) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 209ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#index (for 127.0.0.1 at 2010-05-17 23:26:25) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.6ms)[0m   [0;1mSELECT * FROM "garvin_docs" [0m
+Rendering garvin_doc/index
+Completed in 69ms (View: 50, DB: 1) | 200 OK [http://localhost/garvin_doc/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-17 23:26:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/common/general.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:26:28) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.3ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 56ms (View: 34, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:26:30) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:26:30', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 83ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:26:30) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 212ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:26:30) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 65ms (View: 39, DB: 2) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:27:23) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.5ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 5213ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:27:43) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 151ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#update (for 127.0.0.1 at 2010-05-17 23:28:25) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+  [4;36;1mGarvinDoc Update (0.4ms)[0m   [0;1mUPDATE "garvin_docs" SET "updated_at" = '2010-05-18 03:28:25', "body" = '
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+<ol><li style="font-family: Verdana;"><pre><font size="3">Editor Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: line-through;"><pre><font size="3">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size="3">Add back and close buttons/links</font></pre></li><li><pre><font size="3">Add Table functionality</font></pre></li><li><pre><font size="3">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">File Manager&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li><pre><font size="3"><span style="font-style: italic;">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Make editors open in new window?</span></font></pre></li><li><pre><font size="3"><span style="font-style: italic;">Rename Folder functionality</span></font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Server&nbsp;Functionality</font></pre></li><ol style="font-family: Verdana;"><li style="text-decoration: underline;"><pre><font size="3">Print/to PDF support</font></pre></li><li><pre><font size="3">Revisions in DB</font></pre></li><li><pre><font size="3">Import functionality</font></pre></li></ol><li style="font-family: Verdana;"><pre><font size="3">Bugs</font></pre></li><ol><li style="font-family: Verdana;"><pre><font size="3"><span style="font-family: Verdana;">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/garvin_doc/edit/5
+Completed in 114ms (DB: 1) | 302 Found [http://localhost/garvin_doc/update/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:28:26) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.4ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 50221ms (View: 2, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
+
+
+Processing GarvinDocController#edit (for 127.0.0.1 at 2010-05-17 23:29:16) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mGarvinDoc Load (0.5ms)[0m   [0;1mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Rendering template within layouts/garvin_doc
+Rendering garvin_doc/edit
+  [4;35;1mGarvinFolder Load (0.4ms)[0m   [0mSELECT * FROM "garvin_folders" WHERE ("garvin_folders"."id" = 2) [0m
+Completed in 60ms (View: 35, DB: 1) | 200 OK [http://localhost/garvin_doc/edit/5]
+
+
+Processing GarvinDocController#print (for 127.0.0.1 at 2010-05-17 23:29:31) [POST]
+  Parameters: {"doc"=>{"body"=>"\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n\r\n\r\n\r\n\r\n\r\n<ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Editor Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: line-through;\"><pre><font size=\"3\">Make editor pane correct for size for flash notifications.</font></pre></li><li><pre><font size=\"3\">Add back and close buttons/links</font></pre></li><li><pre><font size=\"3\">Add Table functionality</font></pre></li><li><pre><font size=\"3\">Add Bookmarks/Link functionality<br></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">File Manager&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make sure that flash notifications will display when appropriate</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Make editors open in new window?</span></font></pre></li><li><pre><font size=\"3\"><span style=\"font-style: italic;\">Rename Folder functionality</span></font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Server&nbsp;Functionality</font></pre></li><ol style=\"font-family: Verdana;\"><li style=\"text-decoration: underline;\"><pre><font size=\"3\">Print/to PDF support</font></pre></li><li><pre><font size=\"3\">Revisions in DB</font></pre></li><li><pre><font size=\"3\">Import functionality</font></pre></li></ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\">Bugs</font></pre></li><ol><li style=\"font-family: Verdana;\"><pre><font size=\"3\"><span style=\"font-family: Verdana;\">Mostly only works in FF, perhaps a feature and not a bug</span></font></pre></li></ol></ol>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      \r\n\r\n      ", "title"=>"ToDo"}, "authenticity_token"=>"ZJCqCHsT12mBP3MwC0eEmmjf/DxpbwWpaIsO8DJzOTU=", "id"=>"5"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGarvinDoc Load (0.4ms)[0m   [0mSELECT * FROM "garvin_docs" WHERE ("garvin_docs"."id" = 5) [0m
+Completed in 146ms (View: 1, DB: 1) | 200 OK [http://localhost/garvin_doc/print/5]
+Streaming file pdf/ToDo.pdf
