@@ -59,12 +59,15 @@ class GarvinDocController < ApplicationController
   	if html
    		html.syswrite(@doc.body)
 		else
-   		puts "Unable to open file!"
+   		redirect_to print_error
 		end
 		system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
 		send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
 		#perhaps add functionality to delete tmp files created
 		#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+  end
+  
+  def print_error
   end
 
 end
