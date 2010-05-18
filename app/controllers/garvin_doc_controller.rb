@@ -59,7 +59,7 @@ class GarvinDocController < ApplicationController
   	if html
    		html.syswrite(@doc.body)
 		else
-   		redirect_to print_error
+   		redirect_to :action => :print_error
 		end
 		system "htmldoc --webpage -f pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
 		send_file "pdf/#{@doc.title}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
