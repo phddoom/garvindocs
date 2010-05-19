@@ -11,6 +11,7 @@ function start(){
 		document.execCommand("useCSS", false, null);
 		setInterval("CommandQuery()", 100);
 		selectQueryID = setInterval("selectQuery()", 100);
+		document.getElementById('notice').style= "left:"+ window.innerWidth/2 + ";";
 		}
 }
 
@@ -96,13 +97,6 @@ function Select(selectname)
   }
 } 
 
-function printDoc(){
-	save();
-  document.getElementById("docForm").action="<%= url_for(:action => :print, :id => @doc)%>";
-  document.getElementById("docForm").target="_blank";
-  document.getElementById("docForm").submit();
-
-}
 
 function save(){
   body = document.getElementById("doc");
