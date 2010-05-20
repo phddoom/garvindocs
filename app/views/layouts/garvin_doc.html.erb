@@ -35,7 +35,7 @@
 <% end %> 
 </head>
 <body onload="start()" style="background-color:grey;">
-  <%= link_to 'Logout',logout_path, :class => "logout" %>
+  <%= link_to image_tag("/icons/door_out.png", :border => "0"),logout_path, :class => "logout" %>
   <% @action = :update %>
   <% if @new_doc %>
     <% @action = :create %>
@@ -129,13 +129,13 @@
           </td>
           <td>
             <select onchange="Select(this.id);" id="fontsize" onmousedown="clearInterval(selectQueryID);" onblur="selectQueryID = setInterval('selectQuery()', 100);">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option selected="selected" value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>  
+              <option value="1">8 pt</option>
+              <option value="2">10 pt</option>
+              <option selected="selected" value="3">12 pt</option>
+              <option value="4">14 pt</option>
+              <option value="5">18 pt</option>
+              <option value="6">24 pt</option>
+              <option value="7">36 pt</option>  
             </select>
           </td>
           <td>
@@ -160,7 +160,7 @@
           <td style="width:660px">
           </td>
           <td>
-            <%= link_to "File Manager", :controller => "garvin_folders", :action => :show, :id => @doc.garvin_folder %>
+            <%=  link_to image_tag("/icons/briefcase.png", :border => "0"), :controller => "garvin_folders", :action => :show, :id => @doc.garvin_folder %>
           </td>
         </tr>
       </table>
