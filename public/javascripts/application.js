@@ -11,8 +11,18 @@ function start(){
 		document.execCommand("useCSS", false, null);
 		setInterval("CommandQuery()", 100);
 		selectQueryID = setInterval("selectQuery()", 100);
-		document.getElementById('notice').style= "left:"+ window.innerWidth/2 + ";";
+		guiUpdate();
 		}
+}
+
+function guiUpdate(){
+	//This makes sure that notices provided by flash
+	//are centered with respect to the window		
+	var e = document.getElementById('notice');
+	var width = e.style.width;
+	width = width.substring(0, width.length - 2);
+//	alert(width);
+	e.style.left=String((window.innerWidth/2) - (Number(width)/2)) + "px";
 }
 
 function selectQuery(){
