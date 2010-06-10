@@ -1,0 +1,14 @@
+%head
+	= stylesheet_link_tag "common/general"
+
+%table
+	%tr
+		%th Title
+
+	- @doc.each do |doc|
+		%tr
+		%td= link_to(doc.title, url_for(:controller => "garvin_doc", :action =>"edit", :id => doc.id))
+		%td= link_to('Delete', url_for(:controller => "garvin_doc", :action => "delete", :id => doc.id), :confirm => 'Are you sure?', :method => :delete)
+
+%br/
+= link_to 'New Document', '/garvin_doc/new'

@@ -1,0 +1,36 @@
+%head
+	= stylesheet_link_tag "common/general"
+	= stylesheet_link_tag "folder.css"
+  
+= image_tag("/images/boatSmall.png", :border => "0") + content_tag("span", "GarvinDocs", :style => "font-size:30px;color:#69a4c4;position:absolute;left:70px;top:20px;")
+
+%h3 Current Folder:#{h @parent.name}
+- if !@folder.empty?
+	%h3 Folders
+	%table
+		%tr
+			%th Name
+			- @folder.each do |fold|
+				%tr      
+					%td= link_to({image_tag("/images/folder.png", :border => "0"),
+					content_tag("span"," ", :type => "expand") + content_tag("span", fold.name)},
+					url_for(:controller => "garvin_folders", :action =>"show", :id => fold.id),
+					 :class => "folder_link")
+					%td= link_to('Delete', url_for(:controller => "garvin_folders", :action => "delete", :id => fold.id),
+					:confirm => 'Are you sure?', :method =>:delete)
+	%br/
+%br/
+= link_to "New Folder", new_garvin_folder_path
+- if !@doc.empty?
+	%h3 Documents
+	%table
+		%tr
+			%th Title
+			- @doc.each do |doc|
+				%tr      
+					%td= link_to({image_tag("/images/docIcon.png", :border => "0"),
+					content_tag("span"," ", :type => "expand") + content_tag("span", doc.title)},
+					url_for(:controller => "garvin_doc", :action =>"edit", :id => doc.id), :class => "doc_link")
+					%td= link_to('Delete', url_for(:controller => "garvin_doc", :action => "delete", :id => doc.id), :confirm => 'Are you sure?', :method => :delete)
+%br/
+= link_to 'New Document', url_for(:controller => "garvin_doc", :action =>"new", :id => @parent.id)
