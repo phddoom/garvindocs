@@ -208,3 +208,5 @@ function bindShortcuts()
       parent.saveAndClose();
       });
 }
+
+

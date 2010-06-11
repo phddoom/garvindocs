@@ -1,0 +1,98 @@
+%html
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title= @doc.title
+    :css
+      .imagebutton {height: 16; width: 16; border: solid 2px #69a4c4;
+        background-color: #005EB8}
+        .imagebutton_pressed {height: 16; width: 16; border: inset 2px #000000;
+        background-color: #005EB8}
+        .logout {position:absolute; right: 5px;}
+    = javascript_include_tag :defaults
+    %script{:src => "/javascripts/shortcut.js", :type => "text/javascript"}
+    :javascript
+      function printDoc(){ save(); document.getElementById("docForm").action="#{url_for(:action => :print, :id => @doc)}"; document.getElementById("docForm").target="_blank"; document.getElementById("docForm").submit(); }
+        
+    %body{:onload => "start()", :style => "background-color:grey;"}
+    = link_to image_tag("/icons/door_out.png", :border => "0"),logout_path, :class => "logout"
+    - @action = :update
+    - if @new_doc
+      - @action = :create
+    - form_for :doc, :url => {:action => @action, :id => @doc}, :html => {:id => 'docForm'} do |f|
+      = f.text_field :title
+    %table
+      %tr
+        %td
+          #bold.imagebutton
+            %img{:name => "bold", :onclick => "runCommand('bold');", :src => "/images/text_bold.png"}/
+        %td
+          #italic.imagebutton
+            %img{:name => "italic", :onclick => "runCommand('italic');", :src => "/images/text_italic.png"}/
+        %td
+          #underline.imagebutton
+            %img{:name => "underline", :onclick => "runCommand('underline');", :src => "/images/text_underline.png"}/
+        %td
+          #list.imagebutton
+            %img{:name => "list", :onclick => "runCommand('InsertOrderedList');", :src => "/images/text_list_numbers.png"}/
+        %td
+          #bullets.imagebutton
+            %img{:name => "bullets", :onclick => "runCommand('InsertUnorderedList');", :src => "/images/text_list_bullets.png"}/
+        %td
+          #strikethrough.imagebutton
+            %img{:name => "strikethrough_button", :onclick => "runCommand('strikethrough');", :src => "/images/text_strikethrough.png"}/
+        %td
+          #superscript.imagebutton
+            %img{:name => "superscript", :onclick => "runCommand('superscript');", :src => "/images/text_superscript.png"}/
+        %td
+          #subscript.imagebutton
+            %img{:name => "subscript", :onclick => "runCommand('subscript');", :src => "/images/text_subscript.png"}/
+        %td
+          #justifyright.imagebutton
+            %img{:name => "justifyright", :onclick => "runCommand('justifyright');", :src => "/images/text_justifyright.png"}/
+        %td
+          #justifycenter.imagebutton
+            %img{:name => "justifycenter", :onclick => "runCommand('justifycenter');", :src => "/images/text_justifycenter.png"}/
+        %td
+          #justifyleft.imagebutton
+            %img{:name => "justifyleft", :onclick => "runCommand('justifyleft');", :src => "/images/text_justifyleft.png"}/
+        %td
+          #justifyfull.imagebutton
+            %img{:name => "justifyfull", :onclick => "runCommand('justifyfull');", :src => "/images/text_justifyfull.png"}/
+        %td
+          %select#fontname{:onblur => "selectQueryID = setInterval('selectQuery()', 100);", :onchange => "Select(this.id);", :onmousedown => "clearInterval(selectQueryID);"}
+            %option{:value => "Arial"} Arial
+            %option{:value => "Arial Black"} Arial Black
+            %option{:value => "Courier"} Courier
+            %option{:selected => "selected", :value => "Times New Roman"} Times New Roman
+            %option{:value => "Verdana"} Verdana
+        %td
+          %select#fontsize{:onblur => "selectQueryID = setInterval('selectQuery()', 100);", :onchange => "Select(this.id);", :onmousedown => "clearInterval(selectQueryID);"}
+            %option{:value => "1"} 8 pt
+            %option{:value => "2"} 10 pt
+            %option{:selected => "selected", :value => "3"} 12 pt
+            %option{:value => "4"} 14 pt
+            %option{:value => "5"} 18 pt
+            %option{:value => "6"} 24 pt
+            %option{:value => "7"} 36 pt
+        %td
+          %select#formatblock{:onblur => "selectQueryID = setInterval('selectQuery()', 100);", :onchange => "Select(this.id);", :onmousedown => "clearInterval(selectQueryID);"}
+            %option{:value => "&lt;p&gt;"} Normal
+            %option{:value => "&lt;p&gt;"} Paragraph
+            %option{:value => "&lt;h1&gt;"} Heading 1
+            %option{:value => "&lt;h2&gt;"} Heading 2
+            %option{:value => "&lt;h3&gt;"} Heading 3
+            %option{:value => "&lt;h4&gt;"} Heading 4
+            %option{:value => "&lt;h5&gt;"} Heading 5
+            %option{:value => "&lt;h6&gt;"} Heading 6
+            %option{:value => "&lt;address&gt;"} Address
+            %option{:value => "&lt;pre&gt;"} Formatted
+        %td
+          #print.imagebutton
+            %img{:name => "print", :onclick => "printDoc();", :src => "/images/printer.png"}/
+        %td{:style => "width:660px"}
+        %td
+          = link_to image_tag("/images/briefcase.png", :border => "0"), :controller => "garvin_folders", :action => :show, :id => @doc.garvin_folder
+    #doc{:contenteditable => "true", :name => "doc", :style => "height:80%; border:1px solid\n        black; background-color:#FAFFFF;overflow-x:hidden;overflow-y:auto;"}
+      = yield
+    = hidden_field(:doc, :body)
+    %input{:onclick => "save()", :type => "button", :value => "Save"}/
