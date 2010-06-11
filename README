@@ -1,4 +1,4 @@
-== GarvinDocs
+==GarvinDocs
 GarvinDocs is my own personal version of the Google Docs editor written in Ruby on Rails.
 Current Features:
 Keyboard Shortcuts for most actions.
