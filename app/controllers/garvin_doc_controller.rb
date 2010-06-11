@@ -1,11 +1,11 @@
 class GarvinDocController < ApplicationController
   before_filter :login_required
   layout "garvin_doc", :except => [:index, :print_error]
-  
+
   def index
     @doc = GarvinDoc.find(:all)
   end
-  
+
   def new
     @parent = GarvinFolder.find(params[:id])
     @doc = GarvinDoc.new
@@ -40,19 +40,26 @@ class GarvinDocController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def update
     @doc = GarvinDoc.find(params[:id])
     @doc.title = params[:doc][:title]
     @doc.body = params[:doc][:body]
-    @doc.save
-    respond_to do |format|
-      flash[:notice] = 'Document was successfully updated.'
-      format.html {redirect_to :action => 'edit', :id => @doc.id }
-      format.xml  { head :ok }
+    if @doc.save!
+      respond_to do |format|
+        flash[:notice] = 'Document was successfully updated.'
+        format.html {redirect_to :action => 'edit', :id => @doc.id }
+        format.xml  { head :ok }
+      end
+    else
+      respond_to do |format|
+        flash[:notice] = 'Document was not updated.'
+        format.html {redirect_to :action => 'edit', :id => @doc.id }
+        format.xml  { head :ok }
+      end
     end
   end
-  
+
   def print
   	@doc = GarvinDoc.find(params[:id])
   	html = File.open("html/#{@doc.title.gsub(" ", "_-_")}.html", "w")
@@ -75,8 +82,6 @@ class GarvinDocController < ApplicationController
 			#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
 		end
   end
-  
-  def print_error
-  end
 
 end
+

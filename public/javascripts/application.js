@@ -2,10 +2,10 @@
 // This file is automatically included by javascript_include_tag :defaults
 var selectQueryID;
 function start(){
-	if (document.all){ 
+	if (document.all){
 		//IE
 		frames.doc.document.designMode = "On";
-	}else{ 
+	}else{
 		//Firefox and Chrome
 		bindShortcuts();
 		document.execCommand("useCSS", false, null);
@@ -17,7 +17,7 @@ function start(){
 
 function guiUpdate(){
 	//This makes sure that notices provided by flash
-	//are centered with respect to the window		
+	//are centered with respect to the window
 	var e = document.getElementById('notice');
 	var width = e.style.width;
 	width = width.substring(0, width.length - 2);
@@ -50,7 +50,7 @@ function selectQuery(){
 	}
 	}catch(err){}
 }
- 
+
 function CommandQuery () {
 	var i;
 	var commands = new Array();
@@ -81,15 +81,15 @@ function CommandQuery () {
 }
 function runCommand(theCommand) {
   var theEditor;
-  if (document.all) { 
+  if (document.all) {
     //IE
     frames["doc"].document.execCommand(theCommand, false);
     document.getElementById("doc").contentWindow.focus();
-  } else { 
+  } else {
     //Firefox and Chrome
     document.execCommand(theCommand, false, null);
     document.getElementById("docForm").doc.focus();
-    
+
   }
 }
 
@@ -105,7 +105,7 @@ function Select(selectname)
     document.getElementById("doc").focus();
     //selectQueryID = setInterval("selectQuery()", 100);
   }
-} 
+}
 
 
 function save(){
@@ -208,5 +208,4 @@ function bindShortcuts()
       parent.saveAndClose();
       });
 }
-
 
