@@ -22,7 +22,7 @@ class GarvinDocController < ApplicationController
   def delete
     @doc = GarvinDoc.find(params[:id])
     @doc.destroy
-
+    #TODO: Make this route to the parent folder after deleting a document
     respond_to do |format|
       format.html { redirect_to :controller => "garvin_folders", :action => 'index'  }
       format.xml  { head :ok }
@@ -72,14 +72,14 @@ class GarvinDocController < ApplicationController
       end
 		end
 		if not system "htmldoc --jpeg --webpage -f pdf/#{@doc.title.gsub(" ", "_-_")}.pdf html/#{@doc.title.gsub(" ", "_-_")}.html"
+			#TODO: Handle errors resulting from system call better
 			respond_to do |format|
       format.html {redirect_to :action => 'print_error'}
       format.xml  { head :ok }
       end
 		else
 			send_file "pdf/#{@doc.title.gsub(" ", "_-_")}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
-			#perhaps add functionality to delete tmp files created
-			#system "rm pdf/#{@doc.title}.pdf html/#{@doc.title}.html"
+			#TODO: Add functionality to delete tmp files created
 		end
   end
 
