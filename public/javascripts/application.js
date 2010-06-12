@@ -22,7 +22,8 @@ function guiUpdate(){
 	var width = e.style.width;
 	width = width.substring(0, width.length - 2);
 //	alert(width);
-	e.style.left=String((window.innerWidth/2) - (Number(width)/2)) + "px";
+//	alert(window.innerWidth);
+	e.style.left=String((window.innerWidth - (Number(width)/2))/2) + "px";
 }
 
 function selectQuery(){

@@ -24,7 +24,7 @@ class GarvinDocController < ApplicationController
     @doc.destroy
 
     respond_to do |format|
-      format.html { redirect_to :action => 'index'  }
+      format.html { redirect_to :controller => "garvin_folders", :action => 'index'  }
       format.xml  { head :ok }
     end
   end
