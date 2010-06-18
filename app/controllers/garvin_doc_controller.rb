@@ -1,4 +1,7 @@
 class GarvinDocController < ApplicationController
+
+  require 'pdfkit'
+
   before_filter :login_required
   layout "garvin_doc", :except => [:index, :print_error]
 
@@ -62,25 +65,12 @@ class GarvinDocController < ApplicationController
 
   def print
   	@doc = GarvinDoc.find(params[:id])
-  	html = File.open("html/#{@doc.title.gsub(" ", "_-_")}.html", "w")
-  	if html
-   		html.syswrite(@doc.body)
-		else
-   		respond_to do |format|
-      format.html {redirect_to :action => 'print_error'}
-      format.xml  { head :ok }
-      end
-		end
-		if not system "htmldoc --jpeg --webpage -f pdf/#{@doc.title.gsub(" ", "_-_")}.pdf html/#{@doc.title.gsub(" ", "_-_")}.html"
-			#TODO: Handle errors resulting from system call better
-			respond_to do |format|
-      format.html {redirect_to :action => 'print_error'}
-      format.xml  { head :ok }
-      end
-		else
-			send_file "pdf/#{@doc.title.gsub(" ", "_-_")}.pdf", :type=>"application/pdf"#, :x_sendfile=>true
-			#TODO: Add functionality to delete tmp files created
-		end
+  	body_html = @doc.body.lstrip.rstrip
+  	kit = PDFKit.new(body_html, :page_size => 'Letter')
+    pdf = kit.to_pdf
+    send_data pdf, :type=>"application/pdf",
+                   :filename => @doc.title,
+                   :disposition => "inline"
   end
 
 end

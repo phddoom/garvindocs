@@ -13,8 +13,6 @@
 			%th Name
 			- @folder.each do |fold|
 				%tr
-				#TODO: Make helper that makes folder show links
-				#FIXME: use restful routes for link_to
 					%td= link_to({image_tag("/images/folder.png", :border => "0"),
 					content_tag("span"," ", :type => "expand") + content_tag("span", fold.name)},
 					url_for(:controller => "garvin_folders", :action =>"show", :id => fold.id),
@@ -31,13 +29,10 @@
 			%th Title
 			- @doc.each do |doc|
 				%tr
-					#TODO: Make helper that makes document show links
-					#FIXME: use restful routes for link_to
 					%td= link_to({image_tag("/images/docIcon.png", :border => "0"),
 					content_tag("span"," ", :type => "expand") + content_tag("span", doc.title)},
 					url_for(:controller => "garvin_doc", :action =>"edit", :id => doc.id), :class => "doc_link")
 					%td= link_to('Delete', url_for(:controller => "garvin_doc", :action => "delete", :id => doc.id), :confirm => 'Are you sure?', :method => :delete)
 %br/
-#FIXME: use restful routes for link_to
 = link_to 'New Document', url_for(:controller => "garvin_doc", :action =>"new", :id => @parent.id)
 

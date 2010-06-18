@@ -8,7 +8,7 @@ function start(){
 	}else{
 		//Firefox and Chrome
 		bindShortcuts();
-		document.execCommand("useCSS", false, null);
+		//document.execCommand("useCSS", false, null);
 		setInterval("CommandQuery()", 100);
 		selectQueryID = setInterval("selectQuery()", 100);
 		guiUpdate();
