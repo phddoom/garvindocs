@@ -1,7 +1,5 @@
 class GarvinDocController < ApplicationController
 
-  require 'pdfkit'
-
   before_filter :login_required
   layout "garvin_doc", :except => [:index, :print_error]
 
@@ -65,12 +63,18 @@ class GarvinDocController < ApplicationController
 
   def print
   	@doc = GarvinDoc.find(params[:id])
-  	body_html = @doc.body.lstrip.rstrip
-  	kit = PDFKit.new(body_html, :page_size => 'Letter')
-    pdf = kit.to_pdf
-    send_data pdf, :type=>"application/pdf",
-                   :filename => @doc.title,
-                   :disposition => "inline"
+  	respond_to do |format|
+  	  format.pdf do
+  	    render :pdf => @doc.title,
+  	           :template => "app/views/garvin_doc/doc.pdf.erb"
+  	    end
+    end
+#  	body_html = @doc.body.lstrip.rstrip
+#  	kit = PDFKit.new(body_html, :page_size => 'Letter')
+#    pdf = kit.to_pdf
+#    send_data pdf, :type=>"application/pdf",
+#                   :filename => @doc.title,
+#                   :disposition => "inline"
   end
 
 end
