@@ -24,7 +24,7 @@
       {
         body = document.getElementById("doc");
         document.getElementById("doc_body").value = body.innerHTML;
-        document.getElementById("docForm").action = "#{url_for(:action => :update, :id => @doc)}";
+        document.getElementById("docForm").action = "#{url_for(:action => @action, :id => @doc)}";
         document.getElementById("docForm").target="_self";
         document.getElementById("docForm").submit();
 
