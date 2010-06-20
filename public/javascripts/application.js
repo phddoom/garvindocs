@@ -109,13 +109,6 @@ function Select(selectname)
 }
 
 
-function save(){
-  body = document.getElementById("doc");
-  document.getElementById("doc_body").value = body.innerHTML;
-  document.getElementById("docForm").submit();
-
-}
-
 function saveAndClose(){
   save();
   window.close();

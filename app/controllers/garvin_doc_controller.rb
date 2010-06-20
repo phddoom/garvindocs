@@ -69,12 +69,6 @@ class GarvinDocController < ApplicationController
   	           :template => "app/views/garvin_doc/doc.pdf.erb"
   	    end
     end
-#  	body_html = @doc.body.lstrip.rstrip
-#  	kit = PDFKit.new(body_html, :page_size => 'Letter')
-#    pdf = kit.to_pdf
-#    send_data pdf, :type=>"application/pdf",
-#                   :filename => @doc.title,
-#                   :disposition => "inline"
   end
 
 end

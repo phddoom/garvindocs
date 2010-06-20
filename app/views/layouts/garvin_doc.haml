@@ -16,11 +16,20 @@
     :javascript
       function printDoc()
       {
-        save();
         document.getElementById("docForm").action="#{url_for(:action => :print, :id => @doc)}";
         document.getElementById("docForm").target="_blank";
         document.getElementById("docForm").submit();
       }
+      function save()
+      {
+        body = document.getElementById("doc");
+        document.getElementById("doc_body").value = body.innerHTML;
+        document.getElementById("docForm").action = "#{url_for(:action => :update, :id => @doc)}";
+        document.getElementById("docForm").target="_self";
+        document.getElementById("docForm").submit();
+
+      }
+
       setTimeout("new Effect.Fade('notice');", 500);
   - if flash[:warning] or flash[:notice]
     %div.flash{:id => :notice, :style => "width:240px;"}
