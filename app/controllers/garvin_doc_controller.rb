@@ -22,10 +22,11 @@ class GarvinDocController < ApplicationController
 
   def delete
     @doc = GarvinDoc.find(params[:id])
+    @parent = @doc.garvin_folder
     @doc.destroy
     #TODO: Make this route to the parent folder after deleting a document
     respond_to do |format|
-      format.html { redirect_to :controller => "garvin_folders", :action => 'index'  }
+      format.html { redirect_to :controller => "garvin_folders", :action => 'show', :id => @parent  }
       format.xml  { head :ok }
     end
   end
