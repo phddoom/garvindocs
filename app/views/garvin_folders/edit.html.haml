@@ -1,0 +1,10 @@
+- form_for(@folder) do |f|
+  = f.label"Name of Folder"
+  %br/
+  = f.text_field :name
+  = #f.hidden_field :parent_garvin_folder, :value => @parent.id
+  %br/
+  = select(:parent, :id, @parents.map {|u| [u.name, u.id] if not u.id == @folder.id}, :selected => @parent.id, :include_blank => false)
+  %br/
+  = f.submit "Edit Folder"
+

@@ -2,23 +2,25 @@ class GarvinFoldersController < ApplicationController
   before_filter :login_required
 
   def index
-    @parent=current_user.root_folder
-    @folder=@parent.garvin_folder.find(:all)
-    @doc=@parent.garvin_doc.find(:all)
+    @parent = current_user.root_folder
+    @folder = @parent.garvin_folder.find(:all)
+    @doc = @parent.garvin_doc.find(:all)
   end
 
   def edit
-    @folder=current_user.garvin_folder.find(params[:id])
+    @folder = current_user.garvin_folder.find(params[:id])
   end
 
   def show
-    @parent=GarvinFolder.find(params[:id])
-    @folder=@parent.garvin_folder.find(:all)
-    @doc=@parent.garvin_doc.find(:all)
+    @parent = GarvinFolder.find(params[:id])
+    @folder = @parent.garvin_folder.find(:all)
+    @doc = @parent.garvin_doc.find(:all)
   end
 
   def edit
-		@folder=GarvinFolder.find(:all)
+		@folder = GarvinFolder.find(params[:id])
+    @parents =  GarvinFolder.find(:all)
+    @parent = GarvinFolder.find(params[:parent])
   end
 
   def create
@@ -29,13 +31,17 @@ class GarvinFoldersController < ApplicationController
   end
 
   def new
-    @parent =  params[:parent]
+    @parent =  GarvinFolder.find(params[:parent])
 		@folder = GarvinFolder.new
     render(:layout => false)
   end
 
   def update
-		@folder=GarvinFolder.find(:all)
+		@folder = GarvinFolder.find(params[:id])
+    @folder.name = params[:garvin_folder][:name]
+    @folder.parent_garvin_folder = GarvinFolder.find(params[:parent][:id])
+    @folder.save!
+    redirect_to garvin_folder_path(@folder)
   end
 
   def destroy

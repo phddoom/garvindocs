@@ -2,7 +2,7 @@
 	= f.label"Name of Folder"
 	%br/
 	= f.text_field :name
-	= hidden_field_tag :parent, @parent
+	= hidden_field_tag :parent, @parent.id
 	%br/
 	= f.submit "Create Folder"
 
