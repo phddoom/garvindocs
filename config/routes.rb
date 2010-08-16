@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :garvin_folders
   map.resources :garvin_docs
+  map.resources :revisions
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

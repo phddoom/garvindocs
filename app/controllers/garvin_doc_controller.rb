@@ -46,7 +46,7 @@ class GarvinDocController < ApplicationController
   def update
     @doc = GarvinDoc.find(params[:id])
     @doc.title = params[:doc][:title]
-    @doc.body = params[:doc][:body]
+    @doc.body = params[:doc][:body].strip
     if @doc.save!
       respond_to do |format|
         flash[:notice] = 'Document was successfully updated.'
