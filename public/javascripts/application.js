@@ -1,6 +1,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 var selectQueryID;
+
 function start(){
 	if (document.all){
 		//IE
@@ -8,7 +9,7 @@ function start(){
 	}else{
 		//Firefox and Chrome
 		bindShortcuts();
-		//document.execCommand("useCSS", false, null);
+		document.execCommand("useCSS", false, null);
 		setInterval("CommandQuery()", 100);
 		selectQueryID = setInterval("selectQuery()", 100);
 		guiUpdate();
@@ -94,18 +95,29 @@ function runCommand(theCommand) {
   }
 }
 
+function resestFocus (prevRange)
+{
+  
+  var sel = window.getSelection();
+  if(prevRange.collapsed){
+    var range = sel.getRangeAt(0);
+    range.setStartAfter(range.endContainer);
+  }else{
+    var range = prevRange;
+  }
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+
 function Select(selectname)
 {
 	//clearInterval(selectQueryID);
   var cursel = document.getElementById(selectname).selectedIndex;
-  /* First one is always a label */
-  if (cursel != 0) {
-    var selected = document.getElementById(selectname).options[cursel].value;
-    document.execCommand(selectname,false, selected);
-    //document.getElementById(selectname).selectedIndex = 0;
-    document.getElementById("doc").focus();
-    //selectQueryID = setInterval("selectQuery()", 100);
-  }
+  var selected = document.getElementById(selectname).options[cursel].value;
+  var range = window.getSelection().getRangeAt(0);
+  $("doc").focus();
+  resestFocus(range);
+  document.execCommand(selectname, false, selected);
 }
 
 
