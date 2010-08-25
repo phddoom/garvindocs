@@ -1,0 +1,6 @@
+- form_for(@doc, :url => {:action => :move_update}) do |f|
+  = f.hidden_field :id, :value => @doc.id
+  = select(:parent, :id, @parents.map {|u| [u.name, u.id] if not u.id == @doc.garvin_folder.id}, :selected => @doc.garvin_folder.id, :include_blank => false)
+  %br/
+  = f.submit "Move Doc"
+

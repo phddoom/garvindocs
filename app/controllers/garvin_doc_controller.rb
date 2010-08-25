@@ -1,7 +1,7 @@
 class GarvinDocController < ApplicationController
 
   before_filter :login_required
-  layout "garvin_doc", :except => [:index, :print_error]
+  layout "garvin_doc", :except => [:index, :print_error, :move]
 
   def index
     @doc = GarvinDoc.find(:all)
@@ -12,6 +12,18 @@ class GarvinDocController < ApplicationController
     @doc = GarvinDoc.new
   end
 
+  def move
+    @parents =  GarvinFolder.find(:all)
+    @doc = GarvinDoc.find(params[:id])
+  end
+
+  def move_update
+    @doc = GarvinDoc.find(params[:garvin_doc][:id])
+    @doc.garvin_folder = GarvinFolder.find(params[:parent][:id])
+    @doc.save
+    redirect_to(:action => :edit, :id => @doc.id)
+  end
+  
   def show
     @doc = GarvinDoc.find(params[:id])
   end
