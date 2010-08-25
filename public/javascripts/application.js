@@ -99,14 +99,8 @@ function resestFocus (prevRange)
 {
   
   var sel = window.getSelection();
-  if(prevRange.collapsed){
-    var range = sel.getRangeAt(0);
-    range.setStartAfter(range.endContainer);
-  }else{
-    var range = prevRange;
-  }
   sel.removeAllRanges();
-  sel.addRange(range);
+  sel.addRange(prevRange);
 }
 
 function Select(selectname)
