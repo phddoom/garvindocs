@@ -103,6 +103,17 @@ function resestFocus (prevRange)
   sel.addRange(prevRange);
 }
 
+function createBookmark()
+{
+  var sel = window.getSelection();
+  var range = sel.getRangeAt(0);
+  var bookmark = document.createElement('a');
+  var name = range.toString();
+  name = name.replace(/ /g,'_');
+  bookmark.setAttribute('name',name);
+  range.surroundContents(bookmark);
+}
+
 function Select(selectname)
 {
 	//clearInterval(selectQueryID);
