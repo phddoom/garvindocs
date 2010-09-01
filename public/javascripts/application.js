@@ -22,8 +22,6 @@ function guiUpdate(){
 	var e = document.getElementById('notice');
 	var width = e.style.width;
 	width = width.substring(0, width.length - 2);
-//	alert(width);
-//	alert(window.innerWidth);
 	e.style.left=String((window.innerWidth - (Number(width)/2))/2) + "px";
 }
 
@@ -109,9 +107,40 @@ function createBookmark()
   var range = sel.getRangeAt(0);
   var bookmark = document.createElement('a');
   var name = range.toString();
-  name = name.replace(/ /g,'_');
-  bookmark.setAttribute('name',name);
+  bookmark.setAttribute('name', escape(name));
+  bookmark.setAttribute('class','garvin_bookmark');
   range.surroundContents(bookmark);
+}
+
+function gotoBookmark(bookmark)
+{
+  location.href = bookmark.href
+}
+
+function populateAvailableBookmarks ()
+{
+  var bookmarks = document.getElementsByClassName('garvin_bookmark');
+  var options = [];
+  var i = 0;
+  for(i=0; i<bookmarks.length; i++)
+  {
+    var bookmark = bookmarks[i];
+    var name = bookmark.name;
+    var option = document.createElement('option');
+    option.setAttribute('value',name);
+    option.text = unescape(name);
+    options[i] = option;
+  }
+  var select = document.getElementById("available_bookmarks");
+  var prompt = document.createElement('option');
+  prompt.text = "Select a Bookmark";
+  select.innerHTML = "";
+  select.insert(prompt);
+  for(i=0; i<options.length; i++)
+  {
+    select.insert(options[i])
+  }
+
 }
 
 function Select(selectname)
@@ -131,6 +160,29 @@ function saveAndClose(){
   window.close();
 }
 
+function linkToBookmark()
+{ 
+  var select = document.getElementById("available_bookmarks");
+  var bookmark = "#"+ select.options[select.selectedIndex].value;
+  //document.execCommand('createlink', false, bookmark);
+  var sel = window.getSelection();
+  var range = sel.getRangeAt(0);
+  var link = document.createElement('a');
+  var name = range.toString();
+  link.setAttribute('href', bookmark);
+  link.setAttribute('ondblclick','gotoBookmark(this)');
+  link.setAttribute('class','garvin_link');
+  range.surroundContents(link);
+  cancelLinkToBookmark();
+}
+
+function cancelLinkToBookmark()
+{
+  var div = $("bookmark_menu");
+  div.style.display = "none";
+  
+}
+
 function bindShortcuts()
 {
   //Make Bold shortcut bind to ctrl+b
@@ -138,6 +190,22 @@ function bindShortcuts()
       document.execCommand('bold', false, null);
       });
 
+  //Make Bookmark shortcut bind to ctrl+shift+b
+  shortcut.add("Ctrl+Shift+B", function(){createBookmark();});
+
+  //Make createLink  shortcut bind to alt+l
+  shortcut.add("Ctrl+1", function(){
+      populateAvailableBookmarks();
+      var div = $("bookmark_menu");
+      div.style.display = "block";
+      div.style.backgroundColor = "blue";
+      div.style.zindex="1";
+      div.style.position="absolute";
+      rect = div.getBoundingClientRect();
+      div.style.top= (window.innerHeight/2)-(rect.height/2);
+      div.style.left=(window.innerWidth/2)-(rect.width/2);
+      });
+  
   //Make Italic shortcut bind to ctrl+i
   shortcut.add("Ctrl+i",function() {
       document.execCommand('italic', false, null);
@@ -164,7 +232,7 @@ function bindShortcuts()
       });
 
   //Make bullets shortcut bind to Ctrl+Shift+l
-  shortcut.add("Ctrl+Shift+l",function() {
+  shortcut.add("Ctrl+Shift+L",function() {
       document.execCommand('InsertUnorderedList', false, null);
       });
 
@@ -194,7 +262,7 @@ function bindShortcuts()
       });
 
   //Make justifycenter shortcut bind to Ctrl+e
-  shortcut.add("Ctrl+Shift+e",function() {
+  shortcut.add("Ctrl+Shift+E",function() {
       document.execCommand('justifycenter', false, null);
       });
 
@@ -215,7 +283,7 @@ function bindShortcuts()
       });
 
   //Make Save and Close shortcut bind to Ctrl+S
-  shortcut.add("Ctrl+Shift+s",function() {
+  shortcut.add("Ctrl+Shift+S",function() {
       parent.saveAndClose();
       });
 }
