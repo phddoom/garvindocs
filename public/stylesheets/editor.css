@@ -1,0 +1,19 @@
+#doc
+{
+  height:80%; 
+  border:1px solid black; 
+  background-color:#FAFFFF;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+#doc.fixed_width
+{
+  height:75%; 
+  border:1px solid black; 
+  background-color:#FAFFFF;
+  overflow-x:hidden;
+  overflow-y:auto;
+  margin: 0px auto;
+  padding: 40px 50px;
+  width: 648px !important;
+}

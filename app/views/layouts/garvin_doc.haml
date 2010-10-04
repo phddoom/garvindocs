@@ -13,6 +13,7 @@
         width:240px; left:300px; id="notice"}
       .garvin_link {color:#69a4c4}
     = javascript_include_tag :defaults
+    = stylesheet_link_tag "editor"
     - @action = :update
     - if @new_doc
       - @action = :create
@@ -119,7 +120,7 @@
               %img{:name => "revisions", :onclick => "window.location='/revisions?doc=#{@doc.id}';", :src => "/images/clock.png"}/
           %td{:align => :right}
             = link_to image_tag("/images/briefcase.png", :border => "0"), :controller => "garvin_folders", :action => :show, :id => @doc.garvin_folder
-      #doc{:contenteditable => "true", :name => "doc", :style => "height:80%; border:1px solid black; background-color:#FAFFFF;overflow-x:hidden;overflow-y:auto;"}
+      #doc{:contenteditable => "true", :name => "doc"}
         = yield
       = hidden_field(:doc, :body)
       %input{:onclick => "save()", :type => "button", :value => "Save"}/

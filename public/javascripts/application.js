@@ -195,6 +195,29 @@ function cancelLinkToBookmark()
   
 }
 
+function wordCount()
+{
+  var txt = $("doc").innerText;
+  var lines = txt.split("\n");
+  var count = 0;
+  var i = 0;
+  var j = 0;
+  for(i = 0; i<lines.length; i++)
+  {
+    var words = lines[i].split(" ");
+    for(j = 0; j<words.length; j++)
+    {
+      if(!words[j].empty())
+      {
+        count++
+      }
+    }
+  }
+  return count;
+}
+
+
+
 function bindShortcuts()
 {
   //Make Bold shortcut bind to ctrl+b
@@ -211,6 +234,17 @@ function bindShortcuts()
       displayBookmarkPrompt();
       });
   
+  //Make toggle fixed view shortcut
+  shortcut.add("Ctrl+Shift+F", function(){
+      var class = $("doc").className
+      if (class == "fixed_width")
+      {
+        $("doc").className = "";
+      }else{
+        $("doc").className = "fixed_width";
+      }
+      });
+
   //Make Italic shortcut bind to ctrl+i
   shortcut.add("Ctrl+i",function() {
       document.execCommand('italic', false, null);
