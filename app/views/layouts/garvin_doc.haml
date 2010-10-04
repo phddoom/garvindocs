@@ -80,6 +80,9 @@
           %td.editor_button_td
             #justifyfull.imagebutton
               %img{:name => "justifyfull", :onclick => "runCommand('justifyfull');", :src => "/images/text_justifyfull.png"}/
+          %td.editor_button_td
+            #bookmark.imagebutton
+              %img{:name => "bookmark", :onclick => "populateAvailableBookmarks(); displayBookmarkPrompt();", :src => "/images/tag_blue_add.png"}/
           %td{:style => "width:40;"}
             %select#fontname{:onblur => "selectQueryID = setInterval('selectQuery()', 100);", :onchange => "Select(this.id);", :onmousedown => "clearInterval(selectQueryID);"}
               %option{:value => "Arial"} Arial
@@ -111,6 +114,9 @@
           %td.editor_button_td
             #print.imagebutton
               %img{:name => "print", :onclick => "printDoc();", :src => "/images/printer.png"}/
+          %td.editor_button_td
+            #revisions.imagebutton
+              %img{:name => "revisions", :onclick => "window.location='/revisions?doc=#{@doc.id}';", :src => "/images/clock.png"}/
           %td{:align => :right}
             = link_to image_tag("/images/briefcase.png", :border => "0"), :controller => "garvin_folders", :action => :show, :id => @doc.garvin_folder
       #doc{:contenteditable => "true", :name => "doc", :style => "height:80%; border:1px solid black; background-color:#FAFFFF;overflow-x:hidden;overflow-y:auto;"}

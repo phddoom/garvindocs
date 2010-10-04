@@ -176,6 +176,18 @@ function linkToBookmark()
   cancelLinkToBookmark();
 }
 
+function displayBookmarkPrompt()
+{
+  var div = $("bookmark_menu");
+  div.style.display = "block";
+  div.style.backgroundColor = "#69a4c4";
+  div.style.zindex="1";
+  div.style.position="absolute";
+  rect = div.getBoundingClientRect();
+  div.style.top= (window.innerHeight/2)-(rect.height/2);
+  div.style.left=(window.innerWidth/2)-(rect.width/2);
+}
+
 function cancelLinkToBookmark()
 {
   var div = $("bookmark_menu");
@@ -196,14 +208,7 @@ function bindShortcuts()
   //Make createLink  shortcut bind to alt+l
   shortcut.add("Ctrl+1", function(){
       populateAvailableBookmarks();
-      var div = $("bookmark_menu");
-      div.style.display = "block";
-      div.style.backgroundColor = "blue";
-      div.style.zindex="1";
-      div.style.position="absolute";
-      rect = div.getBoundingClientRect();
-      div.style.top= (window.innerHeight/2)-(rect.height/2);
-      div.style.left=(window.innerWidth/2)-(rect.width/2);
+      displayBookmarkPrompt();
       });
   
   //Make Italic shortcut bind to ctrl+i

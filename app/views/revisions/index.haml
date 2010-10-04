@@ -6,5 +6,5 @@
   - @revisions.each do |revision|
     %tr
       %td= link_to revision.number, revision_path(revision, :doc => @doc.id)
-      %td= revision.changes["body"].first
-      %td= revision.changes["body"].last
+      %td= revision.changes["body"].try(:first)
+      %td= revision.changes["body"].try(:last)
